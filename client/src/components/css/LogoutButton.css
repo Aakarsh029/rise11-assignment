@@ -1,0 +1,21 @@
+.LogoutButton {
+    background-color: #007bff;
+    /* Blue */
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 4px;
+    position: absolute;
+    top: 10px;
+    /* Adjust as needed */
+    right: 10px;
+}
+::-webkit-scrollbar{
+    display: none;
+}

@@ -45,6 +45,14 @@
     background-color: #0056b3;
   }
   
+  .bottom{
+    color: black;
+  }
+  .bottom a{
+    text-decoration: none;
+    color: blue;
+    font-weight: 500;
+  }
   /* Responsive Design */
   @media (max-width: 768px) {
     .signup-container {

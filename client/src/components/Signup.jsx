@@ -3,7 +3,7 @@ import { useAuth } from '../Context/useAuth';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import './css/Signup.css';  // Import the CSS file
-
+import { Link } from 'react-router-dom';
 const Signup = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
@@ -38,6 +38,7 @@ const Signup = () => {
         className="signup-input"
       />
       <button onClick={handleSignup} className="signup-button">Signup</button>
+      <div className="bottom">If Already Signed.. <Link to="/login">LOGIN</Link> </div>
     </div>
   );
 };
