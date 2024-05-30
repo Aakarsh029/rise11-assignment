@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useAuth } from '../Context/useAuth';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-import './css/Login.css';  // Import the CSS file
+import './css/Login.css';  
 import { Link } from 'react-router-dom';
 const Login = () => {
   const [username, setUsername] = useState('');
@@ -10,7 +10,6 @@ const Login = () => {
   const { login } = useAuth();
   const navigate = useNavigate();
   const [error, setError] = useState(''); 
-//use api
   const handleLogin = async () => {
     try {
       const response = await axios.post('http://localhost:5000/api/auth/login', { username, password });

@@ -1,14 +1,13 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
-// const bodyParser = require("body-parser");
 
 const authRoutes = require("./routes/auth.js");
 const todoRoutes = require("./routes/todo.js");
 
 const app = express();
 app.use(cors());
-app.use(express.json()); // Use body-parser to parse JSON bodies
+app.use(express.json()); 
 
 mongoose
   .connect("mongodb://localhost:27017/todo-app")

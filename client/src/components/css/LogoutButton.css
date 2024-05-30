@@ -1,6 +1,5 @@
 .LogoutButton {
     background-color: #007bff;
-    /* Blue */
     border: none;
     color: white;
     padding: 10px 20px;
@@ -13,7 +12,6 @@
     border-radius: 4px;
     position: absolute;
     top: 10px;
-    /* Adjust as needed */
     right: 10px;
 }
 ::-webkit-scrollbar{

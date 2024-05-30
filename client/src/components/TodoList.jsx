@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import LogoutButton from './LogoutButton';
-import './css/TodoList.css'; // Import the CSS file
+import './css/TodoList.css';
 
 const TodoList = () => {
   const [todos, setTodos] = useState([]);
@@ -31,7 +31,7 @@ const TodoList = () => {
       console.log(newTodo);
       const response = await axios.post(
         'http://localhost:5000/api/todos',
-        { text: newTodo }, // Ensure 'text' field is included in the request body
+        { text: newTodo }, 
         { headers: { 'x-auth-token': token } }
       );
       console.log(newTodo);
