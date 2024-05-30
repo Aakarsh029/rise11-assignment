@@ -7,10 +7,11 @@ const TodoList = () => {
   const [todos, setTodos] = useState([]);
   const [newTodo, setNewTodo] = useState('');
 
-  useEffect(() => {
+  useEffect(() => { 
     const fetchTodos = async () => {
       try {
         const token = localStorage.getItem('token');
+        console.log(token);
         const response = await axios.get('http://localhost:5000/api/todos', {
           headers: { 'x-auth-token': token },
         });

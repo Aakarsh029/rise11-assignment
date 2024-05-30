@@ -6,11 +6,13 @@ const router = express.Router();
 
 router.use((req, res, next) => {
   const token = req.header("x-auth-token");
+  console.log(token, "Aakarsh");
   if (!token) {
     return res.status(401).send("Access denied");
   }
   try {
-    const decoded = jwt.verify(token, "secretkey");
+    const decoded = jwt.verify(token, "your_jwt_secret");
+    console.log(decoded, "tanmay");
     req.user = decoded;
     next();
   } catch (error) {
@@ -18,11 +20,11 @@ router.use((req, res, next) => {
   }
 });
 
-router.post('/', async (req, res) => {
+router.post("/", async (req, res) => {
   try {
     const { text } = req.body; // Ensure 'text' is being extracted from the request body
     if (!text) {
-      return res.status(400).send('Text is required');
+      return res.status(400).send("Text is required");
     }
     const todo = new Todo({
       text,
@@ -31,13 +33,13 @@ router.post('/', async (req, res) => {
     await todo.save();
     res.status(201).json(todo);
   } catch (error) {
-    console.error('Failed to create todo', error);
-    res.status(500).json({ message: 'Server error' });
+    console.error("Failed to create todo", error);
+    res.status(500).json({ message: "Server error" });
   }
 });
 
 router.get("/", async (req, res) => {
-  console.log("hiiiii")
+  console.log("hiiiii");
   try {
     const todos = await Todo.find({ userId: req.user.userId });
     res.json(todos);
